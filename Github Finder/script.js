@@ -44,10 +44,70 @@ async function searchUser() {
     console.log("user data is here", userData);
 
     displayUserData(userData);
+
+    fetchRepositories(userData.repos_url); //pass an API link
   } catch (error) {
     console.log(error);
     showError();
   }
+}
+
+async function fetchRepositories(reposUrl) {
+  reposContainer.innerHTML =
+    '<div class="loading-repos">Loading repositories...</div>';
+
+  try {
+    const response = await fetch(reposUrl + "?per_page=6"); //Fetch repos from the api link
+    const repos = await response.json();
+    displayRepos(repos);
+  } catch (error) {
+    reposContainer.innerHTML = `<div class="no-repos">${error.message}</div>`;
+  }
+}
+
+function displayRepos(repos) {
+  if (repos.length === 0) {
+    reposContainer.innerHTML = `<div class="no-repos">No repositories found</div>`;
+    return;
+  }
+
+  reposContainer.innerHTML = "";
+
+  repos.forEach((repo) => {
+    const repoCard = document.createElement("div");
+    repoCard.className = "repo-card";
+
+    const updatedAt = formatDate(repo.updated_at);
+
+    repoCard.innerHTML = `
+      <a href="${repo.html_url}" target="_blank" class="repo-name">
+        <i class="fas fa-code-branch"></i> ${repo.name}
+      </a>
+      <p class="repo-description">${repo.description || "No description available"}</p>
+      <div class="repo-meta">
+        ${
+          repo.language
+            ? `
+          <div class="repo-meta-item">
+            <i class="fas fa-circle"></i> ${repo.language}
+          </div>
+        `
+            : ""
+        }
+        <div class="repo-meta-item">
+          <i class="fas fa-star"></i> ${repo.stargazers_count}
+        </div>
+        <div class="repo-meta-item">
+          <i class="fas fa-code-fork"></i> ${repo.forks_count}
+        </div>
+        <div class="repo-meta-item">
+          <i class="fas fa-history"></i> ${updatedAt}
+        </div>
+      </div>
+    `;
+
+    reposContainer.appendChild(repoCard);
+  });
 }
 
 function displayUserData(user) {
@@ -58,7 +118,7 @@ function displayUserData(user) {
 
   locationElement.textContent = user.location || "Not specified";
   //todo: format the date
-  joinedDateElement.textContent = user.created_at;
+  joinedDateElement.textContent = formatDate(user.created_at);
 
   profileLink.href = user.html_url;
   followers.textContent = user.followers;
@@ -79,11 +139,33 @@ function displayUserData(user) {
     blogElement.textContent = "No website";
     blogElement.href = "#";
   }
+  blogContainer.style.display = "flex";
+
+  if (user.twitter_username) {
+    twitterElement.textContent = `@${user.twitter_username}`;
+    twitterElement.href = `https://twitter.com/${user.twitter_username}`;
+  } else {
+    twitterElement.textContent = "No Twitter";
+    twitterElement.href = "#";
+  }
+
+  twitterContainer.style.display = "flex";
+
+  //Show the profile
+  profileContainer.classList.remove("hidden");
 }
 
 function showError() {
   errorContainer.classList.remove("hidden");
   profileContainer.classList.add("hidden");
+}
+
+function formatDate(dateString) {
+  return new Date(dateString).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    date: "numeric",
+  });
 }
 
 searchInput.value = "DaQ-Ng";
