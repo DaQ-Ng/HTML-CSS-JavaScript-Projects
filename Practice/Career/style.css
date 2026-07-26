@@ -113,10 +113,10 @@ button {
   background: #000000;
   color: white;
   padding: 12px;
-  align-self: flex-start;
   border: none;
   margin-left: auto;
   font-size: 14px;
+  align-self: flex-start;
 }
 
 .job-item:last-child {
@@ -124,8 +124,40 @@ button {
   border: dashed 2px;
 }
 
-@media (max-width: 1279px) {
+#menu-button {
+  display: none;
+  font-size: 24px;
+}
+
+@media (max-width: 800px) {
+  .nav-links {
+    display: none;
+  }
+  #menu-button {
+    display: flex;
+    align-items: center;
+  }
+  .job-item {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .job-item button {
+    margin-left: 0;
+    align-self: flex-start;
+    font-size: 12px;
+    padding: 9px;
+  }
+  #title-1,
+  #title-2 {
+    font-size: 40px;
+  }
+  .employment-location {
+    font-size: 10px;
+  }
+  .description h3 {
+    font-size: 15px;
+  }
   .job-description {
-    max-width: 556px;
+    font-size: 13px;
   }
 }
