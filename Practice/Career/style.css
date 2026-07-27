@@ -8,7 +8,6 @@
 }
 
 body {
-  padding: 20px;
   min-height: 100vh;
   background: linear-gradient(180deg, #a8d3ff, #fff4df);
   font-family: sans-serif;
@@ -18,6 +17,8 @@ nav {
   display: flex;
   justify-content: space-between;
   margin-bottom: 80px;
+  position: relative;
+  padding: 20px;
 }
 
 nav h2 {
@@ -36,10 +37,10 @@ nav h2 {
 
 .container {
   width: 100%;
+  padding: 0 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
 header {
@@ -129,6 +130,10 @@ button {
   font-size: 24px;
 }
 
+#menu-button:hover {
+  cursor: pointer;
+}
+
 @media (max-width: 800px) {
   .nav-links {
     display: none;
@@ -159,5 +164,23 @@ button {
   }
   .job-description {
     font-size: 13px;
+  }
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background-color: #ffffff;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    font-size: 23px;
+    padding: 20px;
+    box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.15);
+    align-items: flex-start;
+  }
+
+  nav:has(.nav-links.active) {
+    background-color: #ffffff;
   }
 }
