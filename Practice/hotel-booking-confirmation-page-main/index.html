@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Hotel booking confirmation page</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 0.6875rem;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Sidebar starts -->
+    <div class="sidebar">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="49"
+        height="49"
+        fill="none"
+        viewBox="0 0 49 49"
+      >
+        <g stroke="#ffde7a" stroke-width="1.837">
+          <path
+            fill="#edb63a"
+            d="M24.5 33.074a8.575 8.575 0 1 0 0-17.149 8.575 8.575 0 0 0 0 17.15Z"
+          />
+          <path
+            stroke-linecap="round"
+            d="M37.975 24.5H44.1m-10.072 9.528 4.331 4.331M24.5 37.975V44.1m-9.529-10.072-4.33 4.331m.384-13.859H4.9m10.071-9.528-4.33-4.331m13.859.384V4.9m9.528 10.072 4.331-4.331"
+          />
+        </g>
+      </svg>
+      <div class="title">
+        <span id="title-1">Maison </span>
+        <span id="title-1">Soleil</span>
+      </div>
+
+      <!-- Guest navigation -->
+      <ul>
+        <li>Your stay <span class="notification">1</span></li>
+        <li>The house</li>
+        <li>Around town</li>
+        <li>Breakfast</li>
+        <li>Messages</li>
+      </ul>
+
+      <!-- Local weather -->
+      <div class="local-weather">
+        <div class="location">Today in Cassis</div>
+        <div class="temperature">27°</div>
+        <div class="weather">Sunny · light breeze</div>
+        <div class="sidebar-end">
+          <p>Est. 1987</p>
+          <p>Maison Soleil · 12 Rue des Oliviers · Cassis</p>
+          <p>© 2026 Maison</p>
+        </div>
+      </div>
+    </div>
+    <!-- Sidebar ends -->
+
+    <!-- Main content starts -->
+    <div class="content">
+      <div class="header">
+        <div class="greeting">
+          <p>Booking · Confirmed</p>
+          <h1>Bienvenue, Lucia.</h1>
+        </div>
+        <div class="option">
+          <div class="option-1">Print receipt</div>
+          <div class="option-2">Add to calendar</div>
+        </div>
+      </div>
+
+      <!-- Booking cards start -->
+      <div class="booking-cards">
+        <div class="receipt-card">
+          <div class="receipt-header">
+            <div id="receipt-title">
+              <p>Receipt</p>
+              <p id="your-stay">Your stay</p>
+            </div>
+            <div id="receipt-info">
+              <p>№ MS-2026</p>
+              <p>0421-AH</p>
+            </div>
+          </div>
+          <div id="booking-date">
+            <div class="check-in">
+              <p>Check in</p>
+              <p class="date"></p>25 Apr</p>
+              <p class="day-time">Saturday · 15:00</p>
+            </div>
+            <div class="check-out">
+              <p>Check out</p>
+              <p class="date"></p>29 Apr</p>
+              <p class="day-time">Wednesday · 11:00</p>
+            </div>
+          </div>
+          <div class="booking-info">
+            <div class="room-service">
+              <p>Room · La Garrigue · 4 nights</p>
+              <p>Breakfast · 2 guests</p>
+              <p>Tourist tax</p>
+            </div>
+            <div class="price">
+              <p>€ 620.00</p>
+              <p>€ 96.00</p>
+              <p>€ 14.40</p>
+            </div>
+          </div>
+          <div class="receipt">
+            <div class="total-method">
+              <p>Total paid</p>
+              <p>Paid · Wise · GBP</p>
+            </div>
+            <div class="amount-barcode">
+              <p>€ 730.40</p>
+              <svg xmlns="http://www.w3.org/2000/svg" width="93" height="28" fill="none" viewBox="0 0 93 28"><g fill="#2b2620"><path d="M0 .121h3V28H0z"/><path d="M5 .115h2v27.879H5zm4-.019h4v27.879H9z" opacity=".78"/><path d="M15 .089h1v27.879h-1z"/><path d="M18 .108h3v27.879h-3zm5-.025h2v27.879h-2z" opacity=".78"/><path d="M27 .07h5v27.879h-5z"/><path d="M34 .057h2v27.879h-2zm4 .02h3v27.879h-3z" opacity=".78"/><path d="M43 .064h1v27.879h-1z"/><path d="M46 .051h4V27.93h-4zm6-.006h2v27.879h-2z" opacity=".78"/><path d="M56 .038h3v27.879h-3z"/><path d="M61 .032h5v27.879h-5zm7-.006h2v27.879h-2z" opacity=".78"/><path d="M72 .019h3v27.879h-3z"/><path d="M77 .013h1v27.879h-1zm3-.007h4v27.879h-4z" opacity=".78"/><path d="M86 0h2v27.879h-2z"/><path d="M90 .102h3v27.879h-3z" opacity=".78"/></g></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Receipt card -->
+          
+      <!-- Barcode image -->
+
+      <!-- Note from host card -->
+      Welcome A note from your host, Margaux. We're so glad you're coming. The
+      shutters will be open, the lemonade cold, and the cat - Poivre -
+      pretending not to notice you. Room La Garrigue
+
+      <!-- Booking cards end -->
+
+      <!-- Guest info row starts -->
+
+      <!-- Arrival -->
+      Arrival 01 Check-in from 15:00 Sat, 25 April Ring the brass bell by the
+      blue door. If we're at the market, the key is in the terracotta pot by the
+      olive tree.
+
+      <!-- Wifi -->
+      Wifi 02 Le Soleil · Guest Password below Network Le Soleil · Guest
+      Password soleil-2026 Copy
+
+      <!-- Breakfast -->
+      Breakfast 03 Served 8 - 10:30 On the terrace Fresh figs, Marseille honey,
+      pain au levain, and espresso. Gluten-free option? Leave a note the night
+      before.
+
+      <!-- Guest info row ends -->
+
+      <!-- Main content ends -->
+    </div>
+
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
+    </footer>
+  </body>
+</html>
