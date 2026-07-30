@@ -361,3 +361,39 @@ But it begins at the 7-second mark skip the first 7 seconds (just start but alre
 .hidden {
   display: none;
 }
+
+@media (max-width: 600) {
+  .container {
+    padding: 1.5rem;
+  }
+
+  .logo {
+    margin-bottom: 2rem;
+  }
+
+  .countdown {
+    gap: 0.5rem;
+  }
+
+  .time-block {
+    padding: 1rem;
+    min-width: 70px;
+  }
+
+  .time-value {
+    font-size: 1.75rem;
+  }
+
+  .separator {
+    font-size: 1.5rem;
+  }
+
+  .email-form {
+    flex-direction: column;
+  }
+
+  .email-form button {
+    width: 100%;
+    justify-content: center;
+  }
+}
