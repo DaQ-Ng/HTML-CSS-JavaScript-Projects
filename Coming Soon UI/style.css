@@ -158,3 +158,93 @@ But it begins at the 7-second mark skip the first 7 seconds (just start but alre
     box-shadow: 0 0 0 10px transparent;
   }
 }
+
+.hero h1 {
+  font-size: clamp(
+    2rem,
+    6vw,
+    3.5rem
+  ); /*set a value that scales between a minimum and maximum (min, scale, max)*/
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: var(--text-dim);
+  line-height: 1.6;
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.time-block {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  min-width: 90px;
+  backdrop-filter: blur(10px); /* blurs everything behind the element */
+}
+
+.time-value {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+  background: linear-gradient(135deg, var(--text), var(--accent-light));
+  -webkit-background-clip: text; /* clips background to text shape FOR OLDER BROWSER*/
+  -webkit-text-fill-color: transparent; /* makes text transparent so gradient shows FOR OLDER BROWSER*/
+  background-clip: text; /* clips background to text shape */
+}
+
+.time-label {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.separator {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-dim);
+  opacity: 0.5;
+}
+
+.email-form {
+  display: flex;
+  gap: 0.75rem;
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.input-group {
+  flex: 1;
+  /* grow to fill available space */
+  /* shrink if needed */
+  /* start from 0 width */
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 0 1.25rem;
+  transition: all 0.3s ease;
+}
+
+.input-group:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
