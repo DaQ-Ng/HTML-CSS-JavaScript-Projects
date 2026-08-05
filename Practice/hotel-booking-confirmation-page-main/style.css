@@ -1,3 +1,6 @@
+@import url(https://fonts.googleapis.com/css?family=Fraunces:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+@import url(https://fonts.googleapis.com/css?family=DM+Sans:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+@import url(https://fonts.googleapis.com/css?family=DM+Mono:300,300italic,regular,italic,500,500italic);
 * {
   padding: 0;
   margin: 0;
@@ -5,13 +8,47 @@
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  grid-template-rows: 1fr auto; /*defines the height of each row on the parent:*/
+  min-height: 100vh;
 }
 
+/*grid lines →  1          2
+              ┌──────────┬──────────────┐  ← line 1
+              │          │   content    │
+              │ sidebar  │   (row 1)    │
+              │          ├──────────────┤  ← line 2
+              │ spans    │   footer     │
+              │ 1 to -1  │   (row 2)    │
+              └──────────┴──────────────┘  ← line 3 (-1)*/
+
 .sidebar {
-  height: 100%;
+  font-family: "DM Sans", sans-serif;
+  grid-row: 1 / -1; /* start at row 1, end at last row */
+  background: hsl(35, 60%, 96%);
+  color: hsl(33, 22%, 20%);
+  padding: 20px 20px;
+}
+
+.sidebar-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid hsl(36, 22%, 86%);
+}
+
+#title-1 {
+  font-family: "Fraunces", serif;
+  font-weight: 400;
+  font-style: italic;
+  color: hsl(15, 74%, 41%);
+}
+
+#title-2 {
+  font-family: "Fraunces", serif;
+  font-weight: 600;
+  color: hsl(33, 15%, 15%);
 }
