@@ -52,3 +52,52 @@ body {
   font-weight: 600;
   color: hsl(33, 15%, 15%);
 }
+
+.sidebar li {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.service-active {
+  background: white;
+}
+
+.sidebar span {
+  margin-left: auto;
+  background: hsl(15, 74%, 41%);
+  color: white;
+  padding: 2px 8px;
+  font-size: 12px;
+  border-radius: 50%;
+}
+
+.sidebar i {
+  margin-left: 5px;
+}
+
+.local-weather {
+  background: hsl(44, 84%, 75%);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.location {
+  font-family: "DM Mono", sans-serif;
+  text-transform: uppercase;
+  color: hsl(33, 17%, 41%);
+  font-size: 12px;
+}
+
+.temperature {
+  font-family: "Fraunces", sans-serif;
+  font-size: 35px;
+}
+
+.weather {
+  color: hsl(33, 17%, 41%);
+  font-size: 14px;
+}

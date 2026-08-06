@@ -14,8 +14,8 @@
 
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
+      integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
@@ -85,11 +85,14 @@
 
       <!-- Guest navigation -->
       <ul>
-        <li>Your stay <span class="notification">1</span></li>
-        <li>The house</li>
-        <li>Around town</li>
-        <li>Breakfast</li>
-        <li>Messages</li>
+        <li class="service-active">
+          <i class="fa-solid fa-bed"></i>Your stay
+          <span class="notification">1</span>
+        </li>
+        <li><i class="fa-regular fa-house"></i> The house</li>
+        <li><i class="fa-solid fa-location-dot"></i> Around town</li>
+        <li><i class="fa-solid fa-mug-saucer"></i> Breakfast</li>
+        <li><i class="fa-regular fa-envelope"></i> Messages</li>
       </ul>
 
       <!-- Local weather -->
@@ -97,13 +100,15 @@
         <div class="location">Today in Cassis</div>
         <div class="temperature">27°</div>
         <div class="weather">Sunny · light breeze</div>
-        <div class="sidebar-end">
-          <p>Est. 1987</p>
-          <p>Maison Soleil · 12 Rue des Oliviers · Cassis</p>
-          <p>© 2026 Maison</p>
-        </div>
+      </div>
+
+      <div class="sidebar-end">
+        <p>Est. 1987</p>
+        <p>Maison Soleil · 12 Rue des Oliviers · Cassis</p>
+        <p>© 2026 Maison</p>
       </div>
     </div>
+
     <!-- Sidebar ends -->
 
     <!-- Main content starts -->
