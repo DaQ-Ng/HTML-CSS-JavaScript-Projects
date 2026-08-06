@@ -151,3 +151,109 @@ a {
   background: rgba(255, 255, 255, 0.25);
   transform: translateY(-3px);
 }
+
+.form-section {
+  background: var(--bg);
+  padding: 4rem;
+  display: grid;
+  place-items: center;
+}
+
+.contact-form {
+  max-width: 480px; /* but never wider than 480px */
+  width: 100%; /* tries to be 100% of parent*/
+}
+
+.contact-form h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-dim);
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  background: var(--input-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  font: inherit;
+  color: var(--text);
+  transition: all 0.2s;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-light);
+}
+
+select {
+  cursor: pointer;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.submit-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: var(--accent);
+  border: none;
+  padding: 1rem;
+  border-radius: var(--radius);
+  font: inherit;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.submit-btn:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255, 29, 72, 0.3);
+}
+
+.submit-btn:hover i {
+  transform: translateX(4px);
+}
+
+.submit-btn i {
+  transition: transform 0.2s;
+}
+
+.hidden {
+  display: none;
+}
