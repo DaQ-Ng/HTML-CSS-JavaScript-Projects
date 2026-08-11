@@ -32,6 +32,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  border-right: 1px solid hsl(36, 22%, 86%);
 }
 
 .sidebar-title {
@@ -140,4 +141,59 @@ body {
   top: -20px;
   right: -1.5px;
   z-index: 1;
+}
+
+.content {
+  background: hsl(35, 60%, 96%);
+  grid-row: 1 / -1;
+  padding: 50px;
+  min-width: 900px;
+}
+
+.header {
+  display: flex;
+}
+
+.greeting p {
+  font-family: "DM Mono", sans-serif;
+  text-transform: uppercase;
+  color: hsl(33, 17%, 41%);
+  letter-spacing: 3px;
+}
+
+.greeting h1 {
+  font-family: "Fraunces", sans-serif;
+  font-weight: 500;
+  font-size: 50px;
+}
+
+.greeting span {
+  font-style: italic;
+  color: hsl(15, 74%, 41%);
+}
+
+.option {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  gap: 30px;
+  margin-top: 15px;
+}
+
+.option-1 {
+  border: solid 2px hsl(36, 22%, 86%);
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 800;
+}
+
+.option-2 {
+  background: black;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 800;
+  color: white;
 }
