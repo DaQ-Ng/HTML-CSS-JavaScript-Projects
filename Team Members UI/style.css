@@ -105,4 +105,192 @@ a {
   right: 0;
   padding: 1.25rem;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.name {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+.role {
+  font-size: 0.8rem;
+  color: var(--accent);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07rem;
+}
+
+.social {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.card:hover .social {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.social a {
+  width: 34px;
+  height: 34px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px); /*blurs whatever is behind an element.*/
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+.social a:hover {
+  background: var(--accent);
+  transform: scale(1.1);
+}
+
+.card-lg {
+  grid-column: span 2; /*the card take 2 collumns in the grid*/
+  grid-row: span 2; /*the card take 2 rows in the grid*/
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  margin: 3rem 0;
+  padding: 2rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  font-weight: 500;
+}
+
+.footer {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer p {
+  font-size: 1.1rem;
+  color: var(--text-dim);
+  font-weight: 500;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: var(--accent);
+  border-radius: 100px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.cta:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(255, 92, 53, 0.3);
+}
+
+.cta:hover i {
+  transform: translateX(4px);
+}
+
+@media (max-width: 900px) {
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+
+  .card {
+    aspect-ratio: 1; /*width-to-height ratio to 1:1*/
+  }
+
+  .card-lg {
+    grid-column: span 2;
+    grid-row: span 1;
+    aspect-ratio: 2/1; /*width-to-height ratio to 2:1*/
+  }
+
+  .stats {
+    gap: 2rem;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 2rem 1rem;
+  }
+
+  .header {
+    margin-bottom: 2rem;
+  }
+
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card,
+  .card-lg {
+    grid-column: span 1;
+    grid-row: span 1;
+    aspect-ratio: 4/3;
+  }
+
+  .card-info {
+    padding: 1rem;
+  }
+
+  .name {
+    font-size: 1rem;
+  }
+
+  .socials {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .stats {
+    flex-wrap: wrap; /*tells a Flexbox container that its items are allowed to move onto a new line when there isn't enough space.*/
+    gap: 1.5rem;
+  }
+
+  .stat {
+    min-width: 80px;
+  }
 }
